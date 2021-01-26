@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+
+        <meta charset="utf-8">
+        <!-- COLLEGAMENTO FONT AWESOME  -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <!-- COLLEGAMENTO FOGLIO DI STYLE  -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- COLLEGAMENTO CDN VUE JS  -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        
+        <title>Sicilia coast to coast. Il vaccino sta arrivando, prenota un viaggio nella nostra terra. Vieni a scoprire anche tu le meraviglie della sicilia.</title>
+    </head>
+    <body >
+
+        <!--CONTAINER: Titolo -->
+        <h1>Sicilia coast to coast</h1>
+        <h2> Il vaccino sta arrivando, prenota un viaggio nella nostra terra. Vieni a scoprire anche tu le meraviglie delle coste Siciliane.</h2>
+        <!--FINE CONTAINER: Titolo -->
+        
+        <!--CONTAINER: Container in cui viene applicata l'azione di Vue js  -->
+        <div id="container" >
+
+            <!--CONTAINER: Pulsante Prev  -->
+            <div class="pulprev">
+                <i @click='prev' class="fas fa-angle-left"></i>
+            </div>
+            <!-- FINE CONTAINER: Pulsante Prev  -->
+
+            <!--CONTAINER: Images + h2 per titolo img  -->
+            <div class="images">
+                <h2 >{{nameCity[counter]}}</h2>
+                <img  :src="images[counter]" :alt="tittleImg[counter]">
+            </div>
+            <!-- FINE CONTAINER: Images + h2 per titolo img -->
+
+            <!--CONTAINER: pulsante Next  -->
+            <div class="pulnext">
+                <i  @click='next' class="fas fa-angle-right"></i>
+            </div>
+            <!-- FINE CONTAINER: pulsante Next  -->
+
+            <!--CONTAINER: Icons pallini img  -->
+            <div class="nav">
+                <i v-for = "(pallini, index) in images" :class = "(index == counter) ? 'active' : '' " @click = 'activeImg(index)' class="fas fa-circle" ></i>
+            </div>
+            <!-- FINE CONTAINER: Icons pallini img  -->
+
+            <!--CONTAINER: Mappa sicilia  -->
+        <div class="mappa">
+
+            <!--CONTAINER: Icons pallini su mappa  -->
+            <div class="nav-mappa">
+                <i v-for = "(pallini, index) in images" :class = "(index == counter) ? 'active' : '' " @click = 'activeImg(index)' class="fas fa-circle" ></i>
+            </div>
+            <!-- FINE CONTAINER: Icons pallini su mappa  -->
+
+            <!-- CONTAINER: Img sicilia  -->
+            <img src="img/SICILIA.jpg" alt="sicilia">
+            <!--FINE CONTAINER: Img sicilia  -->
+
+        </div>
+        <!-- FINE CONTAINER: Mappa sicilia  -->
+
+        </div>
+        <!-- FINE CONTAINER: Container in cui viene applicata l'azione di Vue js  -->
+
+        <!-- COLLEGAMENTO SCRIPT  -->
+        <script src="js/script.js"></script>
+
+    </body>
+    
+</html>
