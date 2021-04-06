@@ -11,14 +11,15 @@ var app = new Vue({
     tittleImg :  ['Marsala','Palermo','Sicacusa','Agrigento'],
     counter : 0,
     intervalDown : '',
-    keyCode: ''
+    keyCode: '',
+    time: 3000
   },
 
   //AREA AZIONE: Area inserimento metodi da applicare al html al caricamento della pagina senza necessità di eseguire una evento
   created(){
 
     //AZIONE: creo un comando con un cambio foto ogni 3 secondi infinito se non viene eseguita l'azione di clearInterval sulle Icons pallini
-    this.intervalDown = setInterval(this.next, 3000);
+    this.intervalDown = setInterval(this.next, this.time);
 
     // AZIONE: aggiungo questo elemento per incorporare la tastiera al programma 
     window.addEventListener('keydown', function(e) {
